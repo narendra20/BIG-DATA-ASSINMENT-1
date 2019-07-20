@@ -1,0 +1,84 @@
+                                                                      
+import random                 
+
+def cards():
+    
+     print('Start the game')
+     print("roll the dices")
+list_card=[{'name':'virat','matchs':300,'runs':12000,'wickets':5,'mom':20},
+        {'name':'hitman','matchs':295,'runs':11000,'wickets':15,'mom':18},
+        {'name':'dhawan','matchs':250,'runs':10000,'wickets':2,'mom':10},
+        {'name':'dhoni','matchs':350,'runs':14000,'wickets':8,'mom':30},
+        {'name':'kl','matchs':50,'runs':4000,'wickets':9,'mom':6},
+        {'name':'jaddu','matchs':150,'runs':1400,'wickets':170,'mom':3},
+        {'name':'kedhar','matchs':80,'runs':4500,'wickets':18,'mom':4},
+        {'name':'bhuvi','matchs':180,'runs':500,'wickets':250,'mom':4}]
+
+random.shuffle(list_card)#shuffling cards using random.shuffle function
+
+# for card in list_card: 
+#     print(card)
+# print('\n')
+
+player1=list_card[0:4]
+# for p1 in player1:
+#     print(p1)
+#print('\n')
+
+player2=list_card[4:]
+# for p2 in player2:
+#     print(p2)
+    
+# print('\n') 
+cards()
+
+def dices():
+
+  p1=random.randint(1,6)# generats a random number with in the specified range 
+  print("player1 rolled",p1)
+
+  p2=random.randint(1,6)
+  print("player2 rolled",p2)
+  if (p1>p2):
+    print('player1 is winner')
+    return(1)
+  elif(p2>p1):
+    print('player2 is winner')
+    return(2)
+  else:
+    print('roll the dices again')
+print('winner has to either start the battel or choose god spell')
+next_turn=dices()    
+print(next_turn)
+
+def player_input():
+    if (next_turn==1):
+        player1_turn=input()
+        print('player1',player1_turn)
+    else:
+        player2_turn=input()
+        print('player2',player2_turn)
+
+player_input()    
+    #outdated deck 
+
+outdated_deck=[]     
+print('player has to choose the strength')#round one 
+strength=input()
+print(player1)
+
+if player1[0][strength]>player2[0][strength]:#comparing the cards with strength 
+  print('player1 is winnner')
+else:
+  print ('plyaer2 is winner')
+print("player1 score and player2  score",player1[0][strength],player2[0][strength])
+outdated_deck.append(player1[0])    #outdated deck  
+outdated_deck.append(player2[0])    
+#outdated_deck
+player1=player1[1:] # removing the first card of the list 
+player2=player2[1:]
+#player1
+#player2
+print('next players turn: press b to choose battle or press s to choose spell ')
+player_input()
+
